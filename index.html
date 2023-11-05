@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text animation| untoldcoding</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h3 class="untoldcoding">Click the letters!</h3>
+    <div class="word">
+      <span>ह</span>
+      <span>र&#160;&#160;&#160</span>
+      <span>ह </span>
+      <span>र&#160;&#160;</span>
+      <span>म</span>
+      <span>हा</span>
+      <span>दे </span>
+      <span>व</span>
+      
+    </div>
+    <footer>
+    <p> <a href="https://www.instagram.com/untoldcoding/">untoldcoding</a>
+        </p>
+    </footer>
+
+    <script>
+      const spans = document.querySelectorAll(".word span");
+
+      spans.forEach((span, idx) => {
+        span.addEventListener("click", (e) => {
+          e.target.classList.add("active");
+        });
+        span.addEventListener("animationend", (e) => {
+          e.target.classList.remove("active");
+        });
+
+        // Initial animation
+        setTimeout(() => {
+          span.classList.add("active");
+        }, 750 * (idx + 1));
+      });
+    </script>
+  </body>
+</html>
